@@ -1,0 +1,114 @@
+:root {
+    /* Base colors */
+    --color-white: #ffffff;
+    --color-light-blue: #bde9f0;
+    --color-text: #4a5568;
+  
+    /* Accent colors */
+    --color-accent: #ff9a8b;     /* Add Task */
+    --color-accent-hover: #ff7f73;
+  
+    --color-success: #a3f7bf;    /* Check/Uncheck */
+    --color-success-text: #2f855a;
+  
+    --color-edit: #4a5568;      
+    --color-delete: #e53e3e;   
+    --color-delete-hover: #c53030;
+  
+    --color-bg-light: #f7fafa;  
+}
+
+body {
+    background-color: var(--color-white);
+    color: var(--color-text);
+}
+
+.main-container {
+    background-color: var(--color-bg-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 500px;
+    min-height: auto;
+    margin: 20px 15px;
+    padding: auto;
+    border-radius: 15px;
+}
+
+.title-container {
+    background-color: var(--color-light-blue);
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+}
+
+.input-box {
+    width: 320px;
+    margin-right: 10px;
+    padding: 2px 2.5px;
+    border: 1px solid var(--color-light-blue);
+    border-radius: 20px;
+}
+
+.input {
+    width: 310px;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+
+
+button.add-button {
+    background-color: var(--color-accent);
+    border-radius: 20px;
+    width: 60px;
+    height: 30px;
+}
+
+button.add-button:hover {
+    background-color: var(--color-accent-hover);
+}
+
+.lists {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 360px;
+}
+
+.list-row {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    width: 360px;
+    list-style: none;
+    background-color: var(--color-light-blue);
+    margin-bottom: 10px;
+    padding: 3px 2px 3px 5px;
+    border-radius: 10px;
+}
+
+button.checked {
+    background-color: var(--color-success);
+    color: var(--color-success-text);
+}
+  
+button.delete-button {
+    color: var(--color-delete);
+}
+
+button.delete-button:hover {
+    color: var(--color-delete-hover);
+}
+  
