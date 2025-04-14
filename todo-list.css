@@ -1,4 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
 :root {
+    --content-width: 400px;
+  
     /* Base colors */
     --color-white: #ffffff;
     --color-light-blue: #bde9f0;
@@ -15,100 +23,162 @@
     --color-delete: #e53e3e;   
     --color-delete-hover: #c53030;
   
-    --color-bg-light: #f7fafa;  
-}
-
-body {
+    --color-bg-light: #f7fafa;
+  }
+  
+  body {
     background-color: var(--color-white);
     color: var(--color-text);
-}
-
-.main-container {
+    font-family: Arial, sans-serif;
+  }
+  
+  .main-container {
+    width: calc(var(--content-width) + 30px);
+    padding: 20px;
+    margin: 100px auto;
     background-color: var(--color-bg-light);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    max-width: 500px;
-    min-height: auto;
-    margin: 20px 15px;
-    padding: auto;
-    border-radius: 15px;
-}
-
-.title-container {
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .title-container {
     background-color: var(--color-light-blue);
-    width: 400px;
+    width: var(--content-width);
     display: flex;
     justify-content: center;
-    margin: 10px;
-    border-radius: 10px;
-    font-size: 20px;
-}
-
-.input-container {
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 12px;
+    border-radius: 15px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .input-container {
     display: flex;
     justify-content: center;
-}
-
-.input-box {
-    width: 320px;
-    margin-right: 10px;
-    padding: 2px 2.5px;
+    width: var(--content-width);
+    margin-bottom: 20px;
+  }
+  
+  .input-box {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
     border: 1px solid var(--color-light-blue);
     border-radius: 20px;
-}
-
-.input {
-    width: 310px;
+    padding: 5px 10px;
+    background-color: #fff;
+  }
+  
+  .input {
+    flex-grow: 1;
     border: none;
     outline: none;
     background: transparent;
-}
-
-
-
-button.add-button {
+    font-size: 14px;
+  }
+  
+  button.add-button {
     background-color: var(--color-accent);
-    border-radius: 20px;
-    width: 60px;
-    height: 30px;
-}
-
-button.add-button:hover {
-    background-color: var(--color-accent-hover);
-}
-
-.lists {
+    color: white;
+    border: none;
+    margin-left: 10px;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+    cursor: pointer;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 360px;
-}
-
-.list-row {
-    display: flex;
-    flex-direction: row;
-    align-items: left;
-    width: 360px;
+  }
+  
+  button.add-button:hover {
+    background-color: var(--color-accent-hover);
+  }
+  
+  .lists {
     list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: var(--content-width);
+  }
+  
+  .list-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 8px 12px;
     background-color: var(--color-light-blue);
-    margin-bottom: 10px;
-    padding: 3px 2px 3px 5px;
     border-radius: 10px;
-}
-
-button.checked {
+    list-style: none;
+    box-sizing: border-box;
+  }
+  
+  .list-row button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  button.checked {
     background-color: var(--color-success);
     color: var(--color-success-text);
-}
+    border-radius: 50%;
+    padding: 4px;
+  }
   
-button.delete-button {
+  button.delete-button {
     color: var(--color-delete);
-}
-
-button.delete-button:hover {
+  }
+  
+  button.delete-button:hover {
     color: var(--color-delete-hover);
-}
+  }
+  
+  button.edit-button {
+    color: var(--color-edit);
+  }
+  
+  .list-row span {
+    flex: 1;
+    margin: 0 12px;
+    font-size: 16px;
+  }
+  
+  .list-row span.checked {
+    text-decoration: line-through;
+    color: var(--color-success-text);
+  }
+  
+  .list-row span.editing {
+    background-color: var(--color-light-blue);
+    border-radius: 10px;
+    padding: 2px 5px;
+  }
+  
+  .list-row span.editing input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+  }
+  
+  .list-row span.editing input:focus {
+    background-color: var(--color-light-blue);
+    border-radius: 10px;
+  }
+  
+  .list-row span.editing input:focus-visible {
+    outline: 2px solid var(--color-light-blue);
+  }
   
