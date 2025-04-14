@@ -26,20 +26,17 @@ function renderTasks() {
       <button class="delete-button"><ion-icon name="trash"></ion-icon></button>
     `;
 
-    // Toggle check/uncheck
     li.children[0].onclick = () => {
       tasks[i].checked = !tasks[i].checked;
       save(); renderTasks();
     };
 
-    // Edit button — load into input
     li.children[2].onclick = () => {
       input.value = task.text;
       editIndex = i;
       input.focus();
     };
 
-    // Delete
     li.children[3].onclick = () => {
       tasks.splice(i, 1);
       save(); renderTasks();
@@ -49,11 +46,10 @@ function renderTasks() {
   });
 }
 
-// Add or Save edited
 addBtn.onclick = () => {
   let text = input.value.trim();
 
-  // Just alert if input is empty
+
   if (!text) {
     alert("Please enter a task!");
     return;
